@@ -21,7 +21,7 @@ export class HackController {
 
     @Get('')
      resolveChallenge() {
-        return  this.hackService.bruteForce("c900cfa79113f5c38d746146940aea7b01965d636ec17c1a5d1dee77a2c2f4fc", "730e43b1bd0b8a7079c6fc1397bf1469");
+        return this.hackService.bruteForce("e428ecbe592d1e5a25da752d01e72921abc42a5254923e9fb4c808c69831dcc0", "4bac23c5eee1c4b8b80ef85be5360de5");
         } 
     }
 
