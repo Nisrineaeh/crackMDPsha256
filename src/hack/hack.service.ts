@@ -8,11 +8,12 @@ export class HackService {
 
     constructor(private httpService: HttpService) { }
 
-    // async recupChallenge() {
-    //     const mdp = this.httpService.post('https://shallenge.onrender.com/challenges');
-    //     const response = await lastValueFrom(mdp);
-    //     return response.data;
-    // }
+    async recupChallenge() {
+        const mdp = this.httpService.post('https://shallenge.onrender.com/challenges');
+        const response = await lastValueFrom(mdp);
+        // console.log(response)
+        return response.data;
+    }
 
 
 
@@ -53,19 +54,10 @@ export class HackService {
     }
 
 
+    async responseChallenge(id, password) {
+        const answer = this.httpService.post(`https://shallenge.onrender.com/challenges/${id}/answer`, { password });
+        const response = await lastValueFrom(answer);
+        return response.data;
 
-
-
-    // async findPassword() {
-    //     const challengeResponse = await lastValueFrom(this.httpService.post('https://shallenge.onrender.com/challenges'));
-    //     const { hash, salt } = challengeResponse.data;
-    //     return this.bruteForce(hash, salt);
-    // }
-
-    // async responseChallenge(id, password) {
-    //     const answer = this.httpService.post(`https://shallenge.onrender.com/challenges/${id}/answer`, { password });
-    //     const response = await lastValueFrom(answer);
-    //     return response.data;
-
-    // }
+    }
 }
